@@ -19,31 +19,31 @@ struct AuthView: View {
     
     var body: some View {
         
-        VStack (spacing: 20) {
-            Text (isAuth ? "Авторизация" : "Регистрация")
-                .padding ()
-                .padding (.horizontal, 30) .font (.title2.bold()) .background (Color("whiteAlpha"))
-                .cornerRadius (isAuth ? 30 : 60)
+        VStack(spacing: 20) {
+            Text(isAuth ? "Авторизация" : "Регистрация")
+                .padding()
+                .padding(.horizontal, 30) .font (.title2.bold()) .background (Color("whiteAlpha"))
+                .cornerRadius(isAuth ? 30 : 60)
             VStack {
                 TextField("Введите Email", text: $email)
-                    .padding ()
+                    .padding()
                     .background(Color("whiteAlpha"))
-                    .cornerRadius (12)
-                    .padding (8)
-                    .padding (.horizontal, 12)
+                    .cornerRadius(12)
+                    .padding(8)
+                    .padding(.horizontal, 12)
                 SecureField("Введите пароль", text: $password)
                     .padding()
-                    .background (Color("whiteAlpha" ))
-                    .cornerRadius (12)
-                    .padding (8)
-                    .padding (.horizontal, 12)
+                    .background(Color("whiteAlpha"))
+                    .cornerRadius(12)
+                    .padding(8)
+                    .padding(.horizontal, 12)
                 if !isAuth {
                     SecureField("Повторите пароль", text: $confirmPassword)
                         .padding()
-                        .background (Color("whiteAlpha" ))
-                        .cornerRadius (12)
-                        .padding (8)
-                        .padding (.horizontal, 12)
+                        .background(Color("whiteAlpha"))
+                        .cornerRadius(12)
+                        .padding(8)
+                        .padding(.horizontal, 12)
                 }
                 
                 Button {
@@ -55,13 +55,13 @@ struct AuthView: View {
                     }
                     
                 } label: {
-                    Text (isAuth ? "Войти" : "Создать Аккаунт")
-                        .padding ()
-                        .frame (maxWidth: .infinity)
-                        .background (LinearGradient(colors: [Color("yellow"), Color("orange")], startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius (12)
-                        .padding (8)
-                        .padding (.horizontal, 12)
+                    Text(isAuth ? "Войти" : "Создать Аккаунт")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(LinearGradient(colors: [Color("yellow"), Color("orange")], startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(12)
+                        .padding(8)
+                        .padding(.horizontal, 12)
                         .font(.title3.bold())
                         .foregroundColor(.black)
                 }
@@ -69,12 +69,12 @@ struct AuthView: View {
                 Button {
                     isAuth.toggle()
                 } label: {
-                    Text (isAuth ? "еще не с нами?" : "уже есть Акк")
-                        .padding (.horizontal)
-                        .frame (maxWidth: .infinity)
-                        .cornerRadius (12)
-                        .padding (8)
-                        .padding (.horizontal, 12)
+                    Text(isAuth ? "еще не с нами?" : "уже есть Акк")
+                        .padding(.horizontal)
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(12)
+                        .padding(8)
+                        .padding(.horizontal, 12)
                         .font(.title3.bold())
                         .foregroundColor(Color("orange"))
                 }
@@ -87,7 +87,7 @@ struct AuthView: View {
             .padding(isAuth ? 30 : 12)
             
 
-        }.frame (maxWidth: .infinity, maxHeight: .infinity)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background (Image ("bg")
                     .ignoresSafeArea ()
                     .blur(radius: isAuth ? 0 : 6))

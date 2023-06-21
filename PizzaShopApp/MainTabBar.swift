@@ -13,7 +13,9 @@ struct MainTabBar: View {
         
         TabView {
             
-            CatalogView()
+            NavigationView {
+                CatalogView()
+            }
                 .tabItem {
                     VStack {
                         Image (systemName: "person.circle")

@@ -16,6 +16,8 @@ struct AuthView: View {
     @State private var confirmPassword = ""
     
     @State private var isTabViewShow = false
+    @State private var isShowAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
         
@@ -52,6 +54,27 @@ struct AuthView: View {
                         isTabViewShow.toggle()
                     } else {
                         print("Регистрация")
+                        
+                        guard password == confirmPassword else {
+                            self.alertMessage = "Paroli ne sovpadaut"
+                            self.isShowAlert.toggle()
+                            return
+                        }
+                        
+                        AuthService.shared.signUp(email: self.email,
+                                                  password: self.password) {result in
+                            switch result {
+                            case.success(let user):
+                                alertMessage = "Vy zaregalis s email \(user.email!)"
+                                self.isShowAlert.toggle()
+                                self.email = ""
+                                self.password = ""
+                                self.confirmPassword = ""
+                                self.isAuth.toggle()
+                            case .failure(let error):
+                                alertMessage = "Oshibka registracii \(error.localizedDescription)"
+                            }
+                        }
                     }
                     
                 } label: {
@@ -85,7 +108,11 @@ struct AuthView: View {
             .background(Color.white)
             .cornerRadius(24)
             .padding(isAuth ? 30 : 12)
-            
+            .alert(alertMessage, isPresented: $isShowAlert) {
+                Button {} label: {
+                    Text("ok")
+                }
+            }
 
         }.frame (maxWidth: .infinity, maxHeight: .infinity)
                 .background (Image ("bg")

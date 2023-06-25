@@ -16,6 +16,7 @@
 		809FBC282A4869BE00BFE250 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 809FBC272A4869BE00BFE250 /* FirebaseFirestore */; };
 		809FBC2A2A4869BE00BFE250 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 809FBC292A4869BE00BFE250 /* FirebaseStorage */; };
 		809FBC2C2A48716800BFE250 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC2B2A48716800BFE250 /* AuthService.swift */; };
+		809FBC2F2A487E1F00BFE250 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC2E2A487E1F00BFE250 /* MainTabBarViewModel.swift */; };
 		80C6734E2A4311FF0002607D /* PizzaShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */; };
 		80C673502A4311FF0002607D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734F2A4311FF0002607D /* AuthView.swift */; };
 		80C673522A4312010002607D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C673512A4312010002607D /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		809FBC202A45A31600BFE250 /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		809FBC222A48663D00BFE250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		809FBC2B2A48716800BFE250 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		809FBC2E2A487E1F00BFE250 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		80C6734A2A4311FF0002607D /* PizzaShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopAppApp.swift; sourceTree = "<group>"; };
 		80C6734F2A4311FF0002607D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		80C673412A4311FF0002607D = {
 			isa = PBXGroup;
 			children = (
-				809FBC2D2A48717200BFE250 /* Services */,
 				80C6734C2A4311FF0002607D /* PizzaShopApp */,
 				80C6734B2A4311FF0002607D /* Products */,
 			);
@@ -95,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */,
+				809FBC2D2A48717200BFE250 /* Services */,
 				80D0D32C2A4348CC00A6DC93 /* Model */,
 				80C673882A432A180002607D /* View */,
 				80C6737F2A4325240002607D /* ViewModel */,
@@ -119,6 +121,7 @@
 				80C6738D2A432E920002607D /* CatalogViewModel.swift */,
 				809FBC1A2A457B7300BFE250 /* ProductDetailViewModel.swift */,
 				809FBC1C2A45A11C00BFE250 /* CartViewModel.swift */,
+				809FBC2E2A487E1F00BFE250 /* MainTabBarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -126,11 +129,11 @@
 		80C673882A432A180002607D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				80C6734F2A4311FF0002607D /* AuthView.swift */,
 				80C673842A4328B40002607D /* CartView.swift */,
 				80C673862A4328CA0002607D /* ProfileView.swift */,
 				80C673802A4325330002607D /* MainTabBar.swift */,
 				80C673822A43287A0002607D /* CatalogView.swift */,
-				80C6734F2A4311FF0002607D /* AuthView.swift */,
 				80D0D32A2A43360300A6DC93 /* ProductDetailVew.swift */,
 				80D0D32D2A4348FC00A6DC93 /* Components */,
 			);
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				809FBC1D2A45A11C00BFE250 /* CartViewModel.swift in Sources */,
+				809FBC2F2A487E1F00BFE250 /* MainTabBarViewModel.swift in Sources */,
 				80C673852A4328B40002607D /* CartView.swift in Sources */,
 				80C673812A4325330002607D /* MainTabBar.swift in Sources */,
 				80C673872A4328CA0002607D /* ProfileView.swift in Sources */,

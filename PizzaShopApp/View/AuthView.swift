@@ -51,7 +51,17 @@ struct AuthView: View {
                 Button {
                     if isAuth {
                         print("Авторизация пользователя")
-                        isTabViewShow.toggle()
+                        
+                        AuthService.shared.signIn(email: self.email,
+                                                  password: self.password) { result in
+                            switch result {
+                            case .success(_):
+                                isTabViewShow.toggle()
+                            case .failure(let error):
+                                alertMessage = "Oshibka avtorizacii: \(error.localizedDescription)"
+                                isShowAlert.toggle()
+                            }
+                        }
                     } else {
                         print("Регистрация")
                         
@@ -101,7 +111,7 @@ struct AuthView: View {
                         .font(.title3.bold())
                         .foregroundColor(Color("orange"))
                 }
-               
+                
             }
             .padding()
             .padding(.top, 16)
@@ -113,21 +123,23 @@ struct AuthView: View {
                     Text("ok")
                 }
             }
-
+            
         }.frame (maxWidth: .infinity, maxHeight: .infinity)
-                .background (Image ("bg")
-                    .ignoresSafeArea ()
-                    .blur(radius: isAuth ? 0 : 6))
-                .animation(Animation.easeInOut(duration: 0.5), value: isAuth)
-                .fullScreenCover(isPresented: $isTabViewShow) {
-                    MainTabBar()
-                }
-        }
-        
+            .background (Image ("bg")
+                .ignoresSafeArea ()
+                .blur(radius: isAuth ? 0 : 6))
+            .animation(Animation.easeInOut(duration: 0.5), value: isAuth)
+            .fullScreenCover(isPresented: $isTabViewShow) {
+                
+                let mainTabBarViewModel = MainTabBarViewModel(user: AuthService.shared.currentUser!)
+                MainTabBar(viewModel: mainTabBarViewModel)
+            }
     }
     
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            AuthView()
-        }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        AuthView()
     }
+}

@@ -87,7 +87,7 @@ struct AuthView: View {
             .padding(isAuth ? 30 : 12)
             
 
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }.frame (maxWidth: .infinity, maxHeight: .infinity)
                 .background (Image ("bg")
                     .ignoresSafeArea ()
                     .blur(radius: isAuth ? 0 : 6))

@@ -22,7 +22,7 @@ struct MainTabBar: View {
                         Text ("Каталог")
                     }
                 }
-            CartView()
+            CartView(viewModel: CartViewModel.shared)
                 .tabItem {
                     VStack {
                         Image (systemName: "person.circle")

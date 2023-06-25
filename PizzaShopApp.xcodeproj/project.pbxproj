@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		809FBC1B2A457B7400BFE250 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC1A2A457B7300BFE250 /* ProductDetailViewModel.swift */; };
+		809FBC1D2A45A11C00BFE250 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC1C2A45A11C00BFE250 /* CartViewModel.swift */; };
+		809FBC1F2A45A14400BFE250 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC1E2A45A14400BFE250 /* Position.swift */; };
+		809FBC212A45A31600BFE250 /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC202A45A31600BFE250 /* PositionCell.swift */; };
 		80C6734E2A4311FF0002607D /* PizzaShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */; };
 		80C673502A4311FF0002607D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734F2A4311FF0002607D /* AuthView.swift */; };
 		80C673522A4312010002607D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C673512A4312010002607D /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		809FBC1A2A457B7300BFE250 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		809FBC1C2A45A11C00BFE250 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		809FBC1E2A45A14400BFE250 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		809FBC202A45A31600BFE250 /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		80C6734A2A4311FF0002607D /* PizzaShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopAppApp.swift; sourceTree = "<group>"; };
 		80C6734F2A4311FF0002607D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -68,13 +76,11 @@
 			isa = PBXGroup;
 			children = (
 				80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */,
-				80C673802A4325330002607D /* MainTabBar.swift */,
+				80D0D32C2A4348CC00A6DC93 /* Model */,
 				80C673882A432A180002607D /* View */,
 				80C6737F2A4325240002607D /* ViewModel */,
 				80C673512A4312010002607D /* Assets.xcassets */,
 				80C673532A4312010002607D /* Preview Content */,
-				80C673892A432A3B0002607D /* Product.swift */,
-				80C6738B2A432AEB0002607D /* ProductCell.swift */,
 			);
 			path = PizzaShopApp;
 			sourceTree = "<group>";
@@ -91,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				80C6738D2A432E920002607D /* CatalogViewModel.swift */,
+				809FBC1A2A457B7300BFE250 /* ProductDetailViewModel.swift */,
+				809FBC1C2A45A11C00BFE250 /* CartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -100,11 +108,31 @@
 			children = (
 				80C673842A4328B40002607D /* CartView.swift */,
 				80C673862A4328CA0002607D /* ProfileView.swift */,
+				80C673802A4325330002607D /* MainTabBar.swift */,
 				80C673822A43287A0002607D /* CatalogView.swift */,
 				80C6734F2A4311FF0002607D /* AuthView.swift */,
 				80D0D32A2A43360300A6DC93 /* ProductDetailVew.swift */,
+				80D0D32D2A4348FC00A6DC93 /* Components */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		80D0D32C2A4348CC00A6DC93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80C673892A432A3B0002607D /* Product.swift */,
+				809FBC1E2A45A14400BFE250 /* Position.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80D0D32D2A4348FC00A6DC93 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				80C6738B2A432AEB0002607D /* ProductCell.swift */,
+				809FBC202A45A31600BFE250 /* PositionCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,11 +205,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809FBC1D2A45A11C00BFE250 /* CartViewModel.swift in Sources */,
 				80C673852A4328B40002607D /* CartView.swift in Sources */,
 				80C673812A4325330002607D /* MainTabBar.swift in Sources */,
 				80C673872A4328CA0002607D /* ProfileView.swift in Sources */,
 				80C6738C2A432AEB0002607D /* ProductCell.swift in Sources */,
 				80C673502A4311FF0002607D /* AuthView.swift in Sources */,
+				809FBC212A45A31600BFE250 /* PositionCell.swift in Sources */,
+				809FBC1B2A457B7400BFE250 /* ProductDetailViewModel.swift in Sources */,
+				809FBC1F2A45A14400BFE250 /* Position.swift in Sources */,
 				80C6734E2A4311FF0002607D /* PizzaShopAppApp.swift in Sources */,
 				80C673832A43287A0002607D /* CatalogView.swift in Sources */,
 				80D0D32B2A43360300A6DC93 /* ProductDetailVew.swift in Sources */,

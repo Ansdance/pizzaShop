@@ -17,6 +17,9 @@
 		809FBC2A2A4869BE00BFE250 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 809FBC292A4869BE00BFE250 /* FirebaseStorage */; };
 		809FBC2C2A48716800BFE250 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC2B2A48716800BFE250 /* AuthService.swift */; };
 		809FBC2F2A487E1F00BFE250 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC2E2A487E1F00BFE250 /* MainTabBarViewModel.swift */; };
+		809FBC312A48928000BFE250 /* MWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC302A48928000BFE250 /* MWUser.swift */; };
+		809FBC332A48933D00BFE250 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC322A48933D00BFE250 /* DataBaseService.swift */; };
+		809FBC352A489E9E00BFE250 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FBC342A489E9E00BFE250 /* ProfileViewModel.swift */; };
 		80C6734E2A4311FF0002607D /* PizzaShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */; };
 		80C673502A4311FF0002607D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734F2A4311FF0002607D /* AuthView.swift */; };
 		80C673522A4312010002607D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C673512A4312010002607D /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		809FBC222A48663D00BFE250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		809FBC2B2A48716800BFE250 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		809FBC2E2A487E1F00BFE250 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		809FBC302A48928000BFE250 /* MWUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWUser.swift; sourceTree = "<group>"; };
+		809FBC322A48933D00BFE250 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		809FBC342A489E9E00BFE250 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		80C6734A2A4311FF0002607D /* PizzaShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C6734D2A4311FF0002607D /* PizzaShopAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopAppApp.swift; sourceTree = "<group>"; };
 		80C6734F2A4311FF0002607D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -72,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				809FBC2B2A48716800BFE250 /* AuthService.swift */,
+				809FBC322A48933D00BFE250 /* DataBaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 				809FBC1A2A457B7300BFE250 /* ProductDetailViewModel.swift */,
 				809FBC1C2A45A11C00BFE250 /* CartViewModel.swift */,
 				809FBC2E2A487E1F00BFE250 /* MainTabBarViewModel.swift */,
+				809FBC342A489E9E00BFE250 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -131,10 +139,10 @@
 			children = (
 				80C6734F2A4311FF0002607D /* AuthView.swift */,
 				80C673842A4328B40002607D /* CartView.swift */,
-				80C673862A4328CA0002607D /* ProfileView.swift */,
 				80C673802A4325330002607D /* MainTabBar.swift */,
 				80C673822A43287A0002607D /* CatalogView.swift */,
 				80D0D32A2A43360300A6DC93 /* ProductDetailVew.swift */,
+				80C673862A4328CA0002607D /* ProfileView.swift */,
 				80D0D32D2A4348FC00A6DC93 /* Components */,
 			);
 			path = View;
@@ -145,6 +153,7 @@
 			children = (
 				80C673892A432A3B0002607D /* Product.swift */,
 				809FBC1E2A45A14400BFE250 /* Position.swift */,
+				809FBC302A48928000BFE250 /* MWUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,10 +247,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				809FBC1D2A45A11C00BFE250 /* CartViewModel.swift in Sources */,
+				809FBC352A489E9E00BFE250 /* ProfileViewModel.swift in Sources */,
 				809FBC2F2A487E1F00BFE250 /* MainTabBarViewModel.swift in Sources */,
+				809FBC332A48933D00BFE250 /* DataBaseService.swift in Sources */,
 				80C673852A4328B40002607D /* CartView.swift in Sources */,
 				80C673812A4325330002607D /* MainTabBar.swift in Sources */,
 				80C673872A4328CA0002607D /* ProfileView.swift in Sources */,
+				809FBC312A48928000BFE250 /* MWUser.swift in Sources */,
 				80C6738C2A432AEB0002607D /* ProductCell.swift in Sources */,
 				80C673502A4311FF0002607D /* AuthView.swift in Sources */,
 				809FBC212A45A31600BFE250 /* PositionCell.swift in Sources */,

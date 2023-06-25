@@ -13,6 +13,8 @@ struct ProfileView: View {
     @State var isQuitAlertPresent = false
     @State var isAuthViewPresent = false
     
+    @StateObject var viewModel: ProfileViewModel
+    
     var body: some View {
         
         VStack(alignment: .center, spacing: 20) {
@@ -47,17 +49,20 @@ struct ProfileView: View {
                     }
                 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Profile")
-                        .bold()
-                    Text("777777777")
+                    TextField("Imya", text: $viewModel.profile.name)
+                        .font(.body.bold())
+                    HStack {
+                        Text("+7")
+                        TextField("Telefon", value: $viewModel.profile.phone, format: .number)
+                    }
                 }
             }
             
             VStack(alignment: .leading, spacing: 8) {
                 Text("Adress DOstavki")
                     .bold()
-                Text("Kazakhstan, Almaty KB ugl Seifulina 136")
-            }
+                TextField("Vash adress", text: $viewModel.profile.address)
+            }.padding(.horizontal)
             
             //tablica s zakazami
             List {
@@ -80,18 +85,26 @@ struct ProfileView: View {
                     } label: {
                         Text("da")
                     }
-
+                    
                 }.fullScreenCover(isPresented: $isAuthViewPresent, onDismiss: nil) {
                     AuthView()
                 }
         }
+        .onSubmit {
+            viewModel.setProfile()
+        }
         
-        
+        .onAppear {
+            self.viewModel.getProfile()
+        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(viewModel: ProfileViewModel(profile: MWUser(id: "",
+                                                                name: "Vasya DDDDD",
+                                                                phone: 876865232,
+                                                                address: "adresss new")))
     }
 }
